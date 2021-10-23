@@ -5,8 +5,8 @@ from config.database import get_db
 from fastapi import HTTPException, status
 from sqlalchemy.orm.session import Session
 
-from domain import account_service
-from domain.account_schema import AccountSchema, AccountSchemaCreate
+from domain.account import account_service
+from domain.account.account_schema import AccountSchema, AccountSchemaCreate
 
 router = APIRouter()
 

@@ -1,7 +1,7 @@
 from sqlalchemy.orm.session import Session
-from domain.account_model import Account
-from domain.account_repository import AccountRepository
-from domain.account_schema import AccountSchema, AccountSchemaCreate
+from domain.account.account_model import Account
+from domain.account.account_repository import AccountRepository
+from domain.account.account_schema import AccountSchema, AccountSchemaCreate
 
 def create(db: Session, body: AccountSchemaCreate) -> AccountSchema:
     account = Account(**body.dict())
