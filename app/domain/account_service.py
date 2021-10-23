@@ -1,5 +1,4 @@
 from sqlalchemy.orm.session import Session
-from app.main import account
 from domain.account_model import Account
 from domain.account_repository import AccountRepository
 from domain.account_schema import AccountSchema, AccountSchemaCreate

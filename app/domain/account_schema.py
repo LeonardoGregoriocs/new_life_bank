@@ -1,11 +1,6 @@
-from os import terminal_size
 from typing import Optional
 from datetime import date, datetime
 from pydantic import BaseModel, Field
-from sqlalchemy import orm
-from sqlalchemy.sql.expression import update
-
-from app.config.database import Base
 
 class AccountSchema(BaseModel):
     id: int

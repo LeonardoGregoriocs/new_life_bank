@@ -6,7 +6,7 @@ from fastapi import HTTPException, status
 from sqlalchemy.orm.session import Session
 
 from domain import account_service
-from domain.account_schema import AccountSchema, AccontSchemaCreate
+from domain.account_schema import AccountSchema, AccountSchemaCreate
 
 router = APIRouter()
 
@@ -19,5 +19,5 @@ def get_accounts(db: Session = Depends(get_db)):
 @router.post("/",
             summary="Operação responsável por criar uma nova conta",
             response_model=AccountSchema)
-def create_account(body: AccontSchemaCreate, db: Session = Depends(get_db)):
+def create_account(body: AccountSchemaCreate, db: Session = Depends(get_db)):
     return account_service.create(db, body)
