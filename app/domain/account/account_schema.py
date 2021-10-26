@@ -6,10 +6,11 @@ class AccountSchema(BaseModel):
     id: int
     name: str=Field(..., example="João")
     born_date: date
+    email: str
     document: str
     phone_number: Optional[str]
     created_at: datetime
-    update_at: datetime
+    updated_at: datetime
 
     class Config:
         orm_mode = True

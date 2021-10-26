@@ -1,5 +1,5 @@
 from fastapi import Depends
-from typing import List, Optional
+from typing import List
 from fastapi.routing import APIRouter
 from config.database import get_db
 from fastapi import HTTPException, status
@@ -15,6 +15,12 @@ router = APIRouter()
             response_model=List[AccountSchema])
 def get_accounts(db: Session = Depends(get_db)):
     return account_service.get_accounts(db)
+
+@router.get("/{id}", 
+            summary="Operação responsável por retornar uma conta",
+            response_model=List[AccountSchema])
+def get_account(id: int, db:Session = Depends(get_db)):
+    return account_service.get_accounts(db, id)
 
 @router.post("/",
             summary="Operação responsável por criar uma nova conta",

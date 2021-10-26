@@ -3,7 +3,7 @@ from datetime import date, datetime
 from sqlalchemy import Column
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.sql.sqltypes import Date, DateTime
+from sqlalchemy.sql.sqltypes import DateTime
 from sqlalchemy.ext.declarative import declared_attr, declarative_base
 
 SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///mydatabase.db")

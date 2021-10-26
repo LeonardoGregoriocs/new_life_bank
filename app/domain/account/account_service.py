@@ -9,3 +9,6 @@ def create(db: Session, body: AccountSchemaCreate) -> AccountSchema:
 
 def get_accounts(db: Session) -> AccountSchema:
     return AccountRepository().all(db, Account)
+
+def get_account(db: Session, id: int) -> AccountSchema:
+    return AccountRepository().filter_by_id(db, Account, id)

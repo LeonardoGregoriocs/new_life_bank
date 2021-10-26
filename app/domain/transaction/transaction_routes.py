@@ -1,7 +1,6 @@
 from fastapi import Depends
-from typing import List, Optional
+from typing import List
 from fastapi.routing import APIRouter
-from starlette import responses
 from config.database import get_db
 from fastapi import HTTPException, status
 from sqlalchemy.orm.session import Session
@@ -12,7 +11,7 @@ from domain.transaction.transaction_schema import TransactionSchema, Transaction
 router = APIRouter()
 
 @router.get("/",
-            summary="Operação responsavél por retornar a transação por filtro.",
+            summary="Operação responsavél por retornar todas transações por filtro.",
             response_model=List[TransactionSchema])
 def get_transactions(db: Session = Depends(get_db)):
     return transaction_service.get_transaction(db)

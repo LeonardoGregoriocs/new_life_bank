@@ -1,16 +1,18 @@
-from sqlalchemy.sql.sqltypes import Float
+from sqlalchemy.orm import relationship
 from config.database import Base
-from sqlalchemy.types import Date
-from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy.sql.schema import ForeignKey
+from sqlalchemy import (Column, Integer, String, Float, ForeignKey)
 
 
 class Transaction(Base):
     __tablename__ = "transaction"
 
-    transactionId = Column(Integer, primary_key=True, index=True)
-    type = Column(String, nullable=False)
+    id = Column(Integer, primary_key=True, index=True)
+    transaction_type = Column(String, nullable=False)
     amount = Column(Float, nullable=False)
-    destinationAccountId = Column(Integer, nullable=False)
+    destination_account = Column(String, nullable=False)
+    account_id = Column(String, ForeignKey("accounts.id"))
+    account = relationship("Account")
 
     def __repr__(self) -> str:
-        return f"{self.type}, {self.amount}"
+        return f"{self.transaction_type}, {self.amount}"

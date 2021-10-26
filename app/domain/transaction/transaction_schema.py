@@ -1,23 +1,24 @@
-from typing import Optional
-from datetime import date, datetime
-from fastapi import background
+from datetime import datetime
 from pydantic import BaseModel, Field
-from sqlalchemy.sql.expression import update
+
 
 class TransactionSchema(BaseModel):
     id: int
-    transactionType: str=Field(..., example="CREDIT")
+    transaction_type: str
     amount: float
-    destinationAccount: int
+    account_id: str
+    destination_account: str
     created_at: datetime
-    update_at: datetime
+    updated_at: datetime
 
     class Config:
         orm_mode = True
 
 class TransactionSchemaCreate(BaseModel):
-    transactionType: str
-    amount: float
+    transaction_type: str=Field(..., example="Pix")
+    amount: float=Field(..., example=40.12)
+    account_id: str=Field(..., example="2")
+    destination_account: str=Field(..., example="Leo@net")
 
     class Config:
         orm_mode = True
