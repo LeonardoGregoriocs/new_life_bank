@@ -1,0 +1,16 @@
+#Versao do docker compose.
+version: "3"
+
+#Listar os container que o docker irá subir.
+services:
+    #Nome do servico no docker compose.
+    bank:
+      #Passamos onde estão os dockerfile que criamos.
+      build: .
+      #Nome do container
+      container_name: bank
+      #Porta que queremos que o comando rode.
+      ports: 
+          - "10000:8003"
+          
+
