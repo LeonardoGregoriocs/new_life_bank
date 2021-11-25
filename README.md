@@ -5,3 +5,4 @@ Este é o projeto final do curso de Backend - Python da escola Vida Nova de Tecn
 - Linguagem: Python 
 - Framework: FastAPI
 - Banco de dados: SQLAlchemy
+- Servidor virtual: Uvicorn
