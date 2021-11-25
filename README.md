@@ -1,4 +1,4 @@
 New Life Bank
 
-- O ambiente foi preparado. 
-- Criação da main, informando qual seria a porta que irimos rodar a aplicação. 
+- Preparamos o ambiente virtual onde iamos atuar, nesse caso, foi utilizado o uvicorn.
+- Criação do main.py onde informamos qual seria o framework utilizado, a porta em que rodariamos a aplicação na web e também realizamos a criação dos primeiros end-point. 
