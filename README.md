@@ -1,2 +1,6 @@
-# Projeto: Banco Digital! 
-Nome do banco: New Life Bank
+## Projeto: Banco Digital - New Life Bank
+
+Este é o projeto final do curso de Backend - Python da escola Vida Nova de Tecnologia, onde aplicamos tudo aquilo que aprendemos durante o curso.
+
+
+
